@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1119"><title>CodeVision — see your code run</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css?v=4">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-mark">⌘</span>code<span>vision</span></a><nav><a class="active" href="#workspace">Visualizer</a><a href="#how">How it works</a></nav><div class="top-right"><span class="status-dot"></span> Python 3 <span class="avatar">S</span></div></header>
+  <main id="workspace">
+    <section class="intro"><div><div class="eyebrow"><span class="eyebrow-line"></span> LEARN BY SEEING</div><h1>Make every line <em>make sense.</em></h1><p>Step through Python code and watch your variables change in real time.</p></div><div class="intro-badge"><span>✳</span> A clearer way to debug</div></section>
+    <div class="workspace-head"><div><span class="workspace-title">WORKSPACE</span><span class="file-pill"><span class="py-icon">Py</span> main.py</span></div><div class="head-actions"><button class="subtle" id="resetBtn">↺ <span>Reset</span></button><button class="run-btn" id="runBtn"><span>▶</span> Run code</button></div></div>
+    <section class="panels">
+      <article class="panel editor-panel"><div class="panel-head"><div><span class="panel-kicker">01 / EDITOR</span><span class="panel-name">Your code</span></div><button class="sample-select" id="sampleBtn">Example: Sum a list <span>⌄</span></button></div>
+        <div class="editor-wrap"><div class="line-numbers" id="lineNumbers"></div><textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Python code editor"></textarea></div>
+        <div class="editor-foot"><span><i class="tiny-dot"></i> Python</span><span id="charCount">0 characters</span><span>⌘ + Enter to run</span></div>
+      </article>
+      <article class="panel flow-panel"><div class="panel-head"><div><span class="panel-kicker">02 / EXECUTION</span><span class="panel-name">Step through</span></div><span class="step-counter" id="stepCounter">READY</span></div>
+        <div class="flow-content"><div class="empty-state" id="emptyState"><div class="play-orbit"><span>▶</span></div><strong>Your code, in motion.</strong><p>Run your program, then move one line<br>at a time to follow the flow.</p><button id="emptyRun" class="text-link">Start tracing <span>→</span></button></div><div class="execution" id="execution" hidden><div class="step-summary" id="stepSummary"></div><div class="source-preview" id="sourcePreview"></div></div></div>
+        <div class="step-controls"><button id="firstBtn" aria-label="First step" disabled>⟪</button><button id="prevBtn" aria-label="Previous step" disabled>←</button><input id="stepSlider" type="range" min="0" max="0" value="0" aria-label="Execution step"><button id="nextBtn" aria-label="Next step" disabled>→</button><button id="lastBtn" aria-label="Last step" disabled>⟫</button><button id="playBtn" class="play-btn" disabled>▶ <span>Play</span></button></div>
+      </article>
+    </section>
+    <section class="lower-grid"><article class="panel"><div class="panel-head compact"><div><span class="panel-kicker">03 / MEMORY</span><span class="panel-name">Variables</span></div><span class="live-label"><i></i> LIVE STATE</span></div><div id="variables" class="variables"><div class="muted-empty">Variables will show up here as your code runs.</div></div></article><article class="panel"><div class="panel-head compact"><div><span class="panel-kicker">04 / CONSOLE</span><span class="panel-name">Program output</span></div><button class="clear-btn" id="clearOutput">Clear</button></div><pre id="output" class="output"><span class="console-hint">Output from print() will appear here.</span></pre></article></section>
+    <footer><span class="footer-brand">⌘ codevision</span><span>Built for curious minds <span class="heart">✳</span></span><span>Trace it. Understand it. Own it.</span></footer>
+  </main><script src="/static/app.js?v=6"></script>
+</body></html>
